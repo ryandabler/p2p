@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./sidebar.css";
 
-export default function SideBar(props) {
+export default function SideBar() {
     return (
         <div className="sidebar">
             <Link to={"/vendors"} className="plain-link">Vendors</Link>
