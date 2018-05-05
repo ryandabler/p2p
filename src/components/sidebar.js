@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 import { sideBarLinks } from "../config";
 
@@ -20,4 +21,8 @@ export default function SideBar(props) {
             {links}
         </div>
     );
+}
+
+SideBar.propTypes = {
+    location: PropTypes.object
 }
