@@ -3,6 +3,10 @@
 	--clr-lt-main: 255, 255, 255
 }  
 
+html, body, #root, .App {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	padding: 0;
