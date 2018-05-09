@@ -1,14 +1,13 @@
 import React from "react";
 
+import KPI from "./kpi";
+
 import "./mini-dash.css";
 
 export default function MiniDash() {
     return (
         <div className="mini-dash">
-            <div className={`kpi clr-salmon`}>
-                <div className="kpi-text">Open contracts</div>
-                <div className="kpi-value">5</div>
-            </div>
+            <KPI />
         </div>
     );
 }
