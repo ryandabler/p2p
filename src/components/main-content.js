@@ -21,8 +21,5 @@ export function MainContent(props) {
 MainContent.propTypes = {
     match: PropTypes.object
 };
-MainContent.propTypes = {
-    match: PropTypes.object
-};
 
 export default connect()(MainContent);
