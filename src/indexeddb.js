@@ -1,4 +1,4 @@
-import { DB_NAME, DB_VERSION } from "./config";
+import { DB_NAME, DB_VERSION, DB_STORES } from "./config";
 
 // This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
 const indexedDB = window.indexedDB ||
@@ -8,13 +8,9 @@ const indexedDB = window.indexedDB ||
                   window.shimIndexedDB;
 
 function initializeDB(db) {
-    db.createObjectStore("vendors", {keyPath: "name"});
-    db.createObjectStore("items", {keyPath: "name"});
-    db.createObjectStore("contracts", {keyPath: "id"});
-    db.createObjectStore("invoices", {keyPath: [ "vendor", "invoiceId" ]});
-    db.createObjectStore("containers", {keyPath: "containerId"});
-    db.createObjectStore("shipments", {autoIncrement: true});
-    db.createObjectStore("payments", {autoIncrememt: true});
+    DB_STORES.forEach(store => {
+        db.createObjectStore(store.name, store.options);
+    });
 }
 
 function openDB(dbName, version) {
