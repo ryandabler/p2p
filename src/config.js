@@ -37,8 +37,5 @@ export const DB_STORES = [
     }, {
         name: "shipments",
         options: { autoIncrement: true }
-    }, {
-        name: "payments",
-        options: { autoIncrement: true }
-    }, 
+    }
 ];
