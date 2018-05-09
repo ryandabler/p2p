@@ -1,4 +1,6 @@
-import {} from "./actions";
+import {
+    LOAD_DATA
+} from "./actions";
 
 const initialState = {
     vendors: [],
@@ -10,5 +12,9 @@ const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
+    if (action.type === LOAD_DATA) {
+        return Object.assign({}, state, { [action.store]: action.data });
+    }
+    
     return state;
 }
