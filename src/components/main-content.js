@@ -8,7 +8,7 @@ import { getLastURLSegment } from "../utilities";
 import "./main-content.css";
 
 export default function MainContent(props) {
-    const _kpis = kpis[getLastURLSegment(props.match.url)];
+    const _kpis = kpis[getLastURLSegment(props.match.url)] || [];
     
     return (
         <div className="main-content">
