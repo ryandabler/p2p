@@ -7,3 +7,11 @@ export const sideBarLinks = [
     "shipments",
     "payments"
 ];
+
+export const kpis = {
+    "contracts": [{
+        text: "Open Contract"
+    }, {
+        text: "Pay Deposits"
+    }]
+};
