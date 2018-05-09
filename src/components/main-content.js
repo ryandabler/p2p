@@ -11,7 +11,7 @@ export default function MainContent(props) {
     
     return (
         <div className="main-content">
-            <MiniDash />
+            <MiniDash kpis={_kpis} />
         </div>
     );
 }

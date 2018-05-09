@@ -4,10 +4,14 @@ import KPI from "./kpi";
 
 import "./mini-dash.css";
 
-export default function MiniDash() {
+export default function MiniDash(props) {
+    const kpis = props.kpis.map(kpi =>
+        <KPI key={kpi.text} />
+    );
+    
     return (
         <div className="mini-dash">
-            <KPI />
+            {kpis}
         </div>
     );
 }
