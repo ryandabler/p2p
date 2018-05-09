@@ -15,3 +15,6 @@ export const kpis = {
         text: "Pay Deposits"
     }]
 };
+
+export const DB_NAME = "P2P";
+export const DB_VERSION = 1;
