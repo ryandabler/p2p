@@ -9,7 +9,7 @@ import { getLastURLSegment } from "../utilities";
 import "./main-content.css";
 
 export function MainContent(props) {
-    const _kpis = kpis[getLastURLSegment(props.match.url)] || [];
+    const _kpis = kpis[props.contentType] || [];
     
     return (
         <div className="main-content">
@@ -19,7 +19,12 @@ export function MainContent(props) {
 }
 
 MainContent.propTypes = {
-    match: PropTypes.object
+    match: PropTypes.object,
+    contentType: PropTypes.string
 };
 
-export default connect()(MainContent);
+const mapStateToProps = (state, props) => ({
+    contentType: getLastURLSegment(props.match.url)
+});
+
+export default connect(mapStateToProps)(MainContent);
