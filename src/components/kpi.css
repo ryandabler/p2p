@@ -1,0 +1,15 @@
+.kpi {
+    color: rgb(var(--clr-lt-main));
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 5px
+}
+
+.kpi .kpi-text {
+    margin-bottom: 5px;
+}
+
+.kpi .kpi-value {
+    text-align: right;
+    border-bottom: 1px solid var(--clr-lt-main);
+}

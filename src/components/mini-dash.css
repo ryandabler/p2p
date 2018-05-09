@@ -3,19 +3,3 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
 }
-
-.main-content .mini-dash .kpi {
-    color: rgb(var(--clr-lt-main));
-    padding: 10px;
-    font-size: 25px;
-    border-radius: 5px
-}
-
-.main-content .mini-dash .kpi .kpi-text {
-    margin-bottom: 5px;
-}
-
-.main-content .mini-dash .kpi .kpi-value {
-    text-align: right;
-    border-bottom: 1px solid var(--clr-lt-main);
-}
