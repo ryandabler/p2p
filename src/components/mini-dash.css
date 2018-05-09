@@ -5,7 +5,7 @@
 }
 
 .main-content .mini-dash .kpi {
-    color: rgb(var(--clr-lt-main) 255, 255, 255);
+    color: rgb(var(--clr-lt-main));
     padding: 10px;
     font-size: 25px;
     border-radius: 5px
