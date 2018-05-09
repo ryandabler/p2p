@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./main-content.css";
+import "./mini-dash.css";
 
 export default function MiniDash() {
     return (
