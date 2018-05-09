@@ -1,0 +1,4 @@
+.main-content {
+    background-color: rgb(var(--clr-lt-main));
+    border-radius: 5px;
+}
