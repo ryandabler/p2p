@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 import MiniDash from "./mini-dash";
 import { kpis } from "../config";
@@ -15,3 +16,7 @@ export default function MainContent(props) {
         </div>
     );
 }
+
+MainContent.propTypes = {
+    match: PropTypes.object
+};
