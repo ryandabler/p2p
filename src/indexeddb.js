@@ -76,6 +76,24 @@ export function getAllFromDB(objectStore, callbackFn) {
     }
 }
 
+export function getEntireDB(callbackFn) {
+    const open = openDB(DB_NAME, DB_VERSION);
+    open.onsuccess = () => {
+        const db = open.result;
+
+        const objectStores = DB_STORES.map(store => store.name);
+        const transaction = initiateTransaction(db, objectStores, "readwrite");
+        DB_STORES.forEach(store => {
+            const _store = transaction.objectStore(store.name);
+            const get = _store.getAll();
+
+            get.onsuccess = () => {
+                callbackFn(get.result, store.name);
+            };
+        });
+    }
+}
+
 export function getFromDBViaIndex(objectStore, idxName, idxValue, callbackFn) {
     const open = openDB(DB_NAME, DB_VERSION);
     open.onsuccess = () => {
