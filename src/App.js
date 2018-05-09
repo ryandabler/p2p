@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+
 import './App.css';
 
 import Header from "./components/header";
@@ -28,4 +30,8 @@ class App extends Component {
 	}
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+
+});
+
+export default connect(null, mapDispatchToProps)(App);
