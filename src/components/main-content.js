@@ -23,8 +23,13 @@ MainContent.propTypes = {
     contentType: PropTypes.string
 };
 
-const mapStateToProps = (state, props) => ({
-    contentType: getLastURLSegment(props.match.url)
-});
+const mapStateToProps = (state, props) => {
+    const urlMatch = getLastURLSegment(props.match.url);
+
+    return {
+        contentType: urlMatch,
+        data: state[urlMatch]
+    };
+}
 
 export default connect(mapStateToProps)(MainContent);
