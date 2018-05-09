@@ -6,8 +6,19 @@ import "./App.css";
 
 import Header from "./components/header";
 import SideBar from "./components/sidebar";
+import { getEntireDB } from "./indexeddb";
+import { loadData } from "./actions";
 
 class App extends Component {
+	constructor(props) {
+		super();
+		this.props = props;
+	}
+
+	componentDidMount() {
+		getEntireDB(this.props.loadData);
+	}
+
 	render() {
 		return (
 			<Router>
@@ -31,7 +42,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-
+	loadData: (data, store) => dispatch(loadData(data, store))
 });
 
 export default connect(null, mapDispatchToProps)(App);
