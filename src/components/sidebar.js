@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 import { sideBarLinks } from "../config";
+import { getLastURLSegment } from "../utilities";
 
 import "./sidebar.css";
 
 export default function SideBar(props) {
     const links = sideBarLinks.map(linkTxt => {
-        const match = props.location.pathname.split("/")[1] === linkTxt ? true : false;
+        const match = getLastURLSegment(props.location.pathname) === linkTxt ? true : false;
         return (
             <Link key={linkTxt} to={`/${linkTxt}`} className={match ? "plain-link link-match" : "plain-link"}>
                 {linkTxt}
