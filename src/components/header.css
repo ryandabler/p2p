@@ -1,7 +1,6 @@
 .header {
     padding: 10px;
     font-size: 30px;
-    background-color: var(--clr-dark-main);
     color: rgba(var(--clr-lt-main), 0.8);
     grid-column: 1 / -1;
 }

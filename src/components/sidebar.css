@@ -1,5 +1,4 @@
 .sidebar {
-    background-color: var(--clr-dark-main);
     display: flex;
     flex-direction: column;
 }
