@@ -1,5 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import { connect } from "react-redux";
 
 import MiniDash from "./mini-dash";
 import { kpis } from "../config";
@@ -7,7 +8,7 @@ import { getLastURLSegment } from "../utilities";
 
 import "./main-content.css";
 
-export default function MainContent(props) {
+export function MainContent(props) {
     const _kpis = kpis[getLastURLSegment(props.match.url)] || [];
     
     return (
@@ -20,3 +21,8 @@ export default function MainContent(props) {
 MainContent.propTypes = {
     match: PropTypes.object
 };
+MainContent.propTypes = {
+    match: PropTypes.object
+};
+
+export default connect()(MainContent);
