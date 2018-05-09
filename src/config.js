@@ -6,4 +6,4 @@ export const sideBarLinks = [
     "containers",
     "shipments",
     "payments"
-]
+];
