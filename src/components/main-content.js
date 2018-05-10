@@ -16,6 +16,9 @@ export function MainContent(props) {
         <div className="main-content">
             <MiniDash kpis={_kpis} />
             <Table data={props.transform(props.data)} columns={props.columns} />
+            <button className="new-button">
+                New
+            </button>
         </div>
     );
 }
