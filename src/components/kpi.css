@@ -12,5 +12,4 @@
 .kpi .kpi-value {
     text-align: right;
     border-bottom: 1px solid rgb(var(--clr-lt-main));
-    grid-column: 1 / -1;
 }
