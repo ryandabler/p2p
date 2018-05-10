@@ -16,5 +16,10 @@ export function transformContracts(data) {
 }
 
 export const transformRules = {
-    contracts: transformContracts
+    contracts: transformContracts,
+    invoices: (data) => data,
+    items: (data) => data,
+    vendors: (data) => data,
+    containers: (data) => data,
+    shipments: (data) => data
 };
