@@ -6,7 +6,7 @@ export default function Table(props) {
     const header = props.columns.map(column => <th key={column}>{column}</th>);
 
     return (
-        <table>
+        <table className="data-table">
             <thead>
                 <tr>
                     {header}
