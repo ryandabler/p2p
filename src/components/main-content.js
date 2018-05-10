@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 
 import MiniDash from "./mini-dash";
+import Table from "./table";
 import { kpis } from "../config";
 import { getLastURLSegment } from "../utilities";
 
@@ -14,6 +15,7 @@ export function MainContent(props) {
     return (
         <div className="main-content">
             <MiniDash kpis={_kpis} />
+            <Table />
         </div>
     );
 }
