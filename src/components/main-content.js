@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import MiniDash from "./mini-dash";
 import Table from "./table";
-import { kpis } from "../config";
+import { kpis, tableColumns } from "../config";
 import { getLastURLSegment, transformRules } from "../utilities";
 
 import "./main-content.css";
@@ -15,7 +15,7 @@ export function MainContent(props) {
     return (
         <div className="main-content">
             <MiniDash kpis={_kpis} />
-            <Table data={props.transform(props.data)} />
+            <Table data={props.transform(props.data)} columns={props.columns} />
         </div>
     );
 }
@@ -24,7 +24,8 @@ MainContent.propTypes = {
     match: PropTypes.object,
     contentType: PropTypes.string,
     transform: PropTypes.func,
-    data: PropTypes.array
+    data: PropTypes.array,
+    columns: PropTypes.array
 };
 
 const mapStateToProps = (state, props) => {
@@ -33,7 +34,8 @@ const mapStateToProps = (state, props) => {
     return {
         contentType: urlMatch,
         data: state[urlMatch],
-        transform: transformRules[urlMatch]
+        transform: transformRules[urlMatch],
+        columns: tableColumns[urlMatch]
     };
 }
 
