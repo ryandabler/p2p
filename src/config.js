@@ -48,9 +48,36 @@ export const tableColumns = {
         "Deposit",
         "Closed"
     ],
-    vendors: [],
-    items: [],
-    invoices: [],
-    containers: [],
-    shipments: []
+    vendors: [
+        "Name",
+        "Address",
+        "Balance"
+    ],
+    items: [
+        "Name",
+        "Total Qty",
+        "Unit Cost"
+    ],
+    invoices: [
+        "Invoice",
+        "Vendor",
+        "Date",
+        "Amount",
+        "Deposit",
+        "Paid",
+        "Balance"
+    ],
+    containers: [
+        "Container",
+        "Weight",
+        "Count",
+        "Inspected"
+    ],
+    shipments: [
+        "Carrier",
+        "BOL",
+        "Ship Date",
+        "Port Date",
+        "Arrive Date"
+    ]
 };
