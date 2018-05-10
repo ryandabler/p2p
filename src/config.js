@@ -39,3 +39,18 @@ export const DB_STORES = [
         options: { autoIncrement: true }
     }
 ];
+
+export const tableColumns = {
+    contracts: [
+        "Contract",
+        "Vendor",
+        "Amount",
+        "Deposit",
+        "Closed"
+    ],
+    vendors: [],
+    items: [],
+    invoices: [],
+    containers: [],
+    shipments: []
+};
