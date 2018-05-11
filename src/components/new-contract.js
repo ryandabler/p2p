@@ -9,7 +9,7 @@ export default function NewContract() {
         <div className="new-contract">
             <form className="new-contract-form">
                 <h2>Main Info</h2>
-                <label htmlFor="contractId">Contract</label>
+                <label htmlFor="contractId">Contract Number</label>
                 <input id="contractId" name="id" required />
                 <label htmlFor="vendorName">Vendor</label>
                 <input id="vendorName" name="vendor" required />
