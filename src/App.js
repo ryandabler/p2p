@@ -26,7 +26,7 @@ class App extends Component {
 			<Router>
 				<div className="App">
 					<Header />
-					<Route path="/" component={SideBar} />
+					<Route path="/:component" component={SideBar} />
 					<Switch>
 						<Route exact path={"/"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/vendors"} render={props => <MainContent match={props.match} />} />
