@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import MiniDash from "./mini-dash";
 import Table from "./table";
@@ -16,9 +17,9 @@ export function MainContent(props) {
         <div className="main-content">
             <MiniDash kpis={_kpis} />
             <Table data={props.transform(props.data)} columns={props.columns} />
-            <button className="new-button">
+            <Link to={`${props.match.url}/new`} className="plain-link buttonize clr-green">
                 New
-            </button>
+            </Link>
         </div>
     );
 }
