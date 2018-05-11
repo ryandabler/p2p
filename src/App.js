@@ -35,7 +35,6 @@ class App extends Component {
 						<Route exact path={"/invoices"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/containers"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/shipments"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/payments"} render={props => <MainContent match={props.match} />} />
 					</Switch>
 				</div>
 			</Router>

@@ -4,8 +4,7 @@ export const sideBarLinks = [
     "contracts",
     "invoices",
     "containers",
-    "shipments",
-    "payments"
+    "shipments"
 ];
 
 export const kpis = {
