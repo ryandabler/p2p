@@ -10,3 +10,20 @@
 .new-contract-line-items input{
     width: 100%;
 }
+
+.new-contract-line-items .x {
+    font-size: 25px;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, var(--opacity));
+    color: rgb(var(--clr-lt-main));
+}
+
+.new-contract-line-items .x:hover {
+    --opacity: 1;
+}

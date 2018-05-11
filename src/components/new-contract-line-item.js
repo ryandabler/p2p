@@ -31,6 +31,7 @@ export function NewContractLineItem(props) {
                         <td><input defaultValue={line.product} required /></td>
                         <td><input defaultValue={line.quantity} required /></td>
                         <td><input defaultValue={line.price} required /></td>
+                        <td><span className="x linkify">×</span></td>
                     </tr>
                 )}
                 <tr>
