@@ -10,13 +10,13 @@ export default function NewContract() {
             <form className="new-contract-form">
                 <h2>Main Info</h2>
                 <label htmlFor="contractId">Contract</label>
-                <input id="contractId" name="id" />
+                <input id="contractId" name="id" required />
                 <label htmlFor="vendorName">Vendor</label>
-                <input id="vendorName" name="vendor" />
+                <input id="vendorName" name="vendor" required />
                 <label htmlFor="contractDate">Date</label>
-                <input id="contractDate" name="date" />
+                <input id="contractDate" name="date" required />
                 <label htmlFor="contractDeposit">Deposit</label>
-                <input id="contractDeposit" name="deposit" />
+                <input id="contractDeposit" name="deposit" required />
 
                 <h2>Item Info</h2>
                 <NewContractLineItem />
