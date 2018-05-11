@@ -6,3 +6,7 @@
     grid-template-columns: 80% 20%;
     grid-template-rows: min-content;
 }
+
+.main-content > a.buttonize {
+    color: rgb(var(--clr-lt-main));
+}
