@@ -9,7 +9,7 @@ const initialState = {
     invoices: [],
     containers: [],
     shipments: [],
-    form: []
+    form: [{}]
 }
 
 export const reducer = (state = initialState, action) => {
