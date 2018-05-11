@@ -1,0 +1,21 @@
+.new-contract {
+    background-color: rgb(var(--clr-lt-main));
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.new-contract .new-contract-form {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+
+.new-contract .new-contract-form > * {
+    display: block;
+    width: 100%;
+}
+
+.new-contract .new-contract-form > input {
+    padding: 10px;
+}
