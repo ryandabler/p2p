@@ -1,5 +1,5 @@
 .new-contract {
-    background-color: rgb(var(--clr-lt-main));
+    background-color: rgba(var(--clr-lt-main), 0.85);
     border-radius: 5px;
     padding: 10px;
 }
@@ -9,13 +9,29 @@
     margin: 0 auto;
     border: 1px solid lightgray;
     padding: 10px;
+    color: var(--clr-near-blk);
+    background-color: rgb(var(--clr-lt-main));
+    border-radius: 5px;
 }
 
-.new-contract .new-contract-form > * {
+.new-contract .new-contract-form > label,
+.new-contract .new-contract-form > input {
     display: block;
     width: 100%;
 }
 
-.new-contract .new-contract-form > input {
-    padding: 10px;
+.new-contract .new-contract-form label {
+    margin-bottom: 3px;
+}
+
+.new-contract .new-contract-form input {
+    padding: 5px;
+}
+
+.new-contract .new-contract-form input, .new-contract .new-contract-form label {
+    font-size: 16px;
+}
+
+.new-contract .new-contract-form input:not(:last-child) {
+    margin-bottom: 10px;
 }

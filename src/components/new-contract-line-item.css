@@ -1,0 +1,12 @@
+.new-contract-line-items {
+    text-align: left;
+    width: 100%;
+}
+
+.new-contract-line-items thead th {
+    width: calc(100% / 3);
+}
+
+.new-contract-line-items input{
+    width: 100%;
+}
