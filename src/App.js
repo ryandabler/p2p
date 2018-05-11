@@ -8,6 +8,7 @@ import "./App.css";
 import Header from "./components/header";
 import SideBar from "./components/sidebar";
 import MainContent from "./components/main-content";
+import NewContract from "./components/new-contract";
 import { getEntireDB } from "./indexeddb";
 import { loadData } from "./actions";
 
@@ -30,11 +31,17 @@ class App extends Component {
 					<Switch>
 						<Route exact path={"/"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/vendors"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/vendors/new"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/items"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/items/new"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/contracts"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/contracts/new"} render={props => <NewContract props={props} />} />
 						<Route exact path={"/invoices"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/invoices/new"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/containers"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/containers/new"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/shipments"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/shipments/new"} render={props => <MainContent match={props.match} />} />
 					</Switch>
 				</div>
 			</Router>
