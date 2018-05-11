@@ -17,7 +17,7 @@ export function NewContractLineItem(props) {
     }
 
     return (
-        <table>
+        <table className="new-contract-line-items">
             <thead>
                 <tr>
                     <th>Product</th>
