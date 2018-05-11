@@ -1,6 +1,7 @@
 :root {
 	--clr-dark-main: #180045;
 	--clr-lt-main: 255, 255, 255;
+	--opacity: 0.85;
 }  
 
 html, body, #root, .App {
@@ -20,4 +21,21 @@ body {
 
 .clr-salmon {
 	background-color: #f4845cd9
+}
+
+.clr-green {
+	background-color: rgba(56, 150, 17, var(--opacity));
+}
+
+.clr-green:hover {
+	--opacity: 1;
+}
+
+.buttonize {
+    height: 20px;
+    padding: 10px 0;
+	border-radius: 5px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
