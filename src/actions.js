@@ -4,3 +4,9 @@ export const loadData = (data, store) => ({
     data,
     store
 });
+
+export const ADD_NEW_FORM_LINE = "ADD_NEW_FORM_LINE";
+export const addNewFormLine = fields => ({
+    type: ADD_NEW_FORM_LINE,
+    fields
+});
