@@ -22,8 +22,14 @@
     border-radius: 50%;
     background-color: rgba(255, 0, 0, var(--opacity));
     color: rgb(var(--clr-lt-main));
+    visibility: hidden;
+}
+
+.new-contract-line-items tr:hover .x {
+    visibility: visible;
 }
 
 .new-contract-line-items .x:hover {
     --opacity: 1;
+    visibility: visible;
 }
