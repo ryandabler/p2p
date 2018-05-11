@@ -33,3 +33,16 @@
     --opacity: 1;
     visibility: visible;
 }
+
+.new-contract-line-items .menu-options {
+    display: flex;
+    margin-top: 10px;
+}
+
+.new-contract-line-items .menu-options > *:not(:last-child) {
+    margin-right: 5px;
+}
+
+.new-contract-line-items .menu-options > :last-child {
+    margin-left: auto;
+}
