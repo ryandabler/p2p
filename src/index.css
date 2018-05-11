@@ -30,6 +30,7 @@ body {
 
 .clr-green {
 	background-color: rgba(56, 150, 17, var(--opacity));
+	color: rgb(var(--clr-lt-main));
 }
 
 .clr-green:hover {
