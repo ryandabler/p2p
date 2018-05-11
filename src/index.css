@@ -25,8 +25,12 @@ body {
 }
 
 .clr-salmon {
-	background-color: #f4845cd9
+	background-color: rgba(244, 132, 92, var(--opacity));
 	color: rgb(var(--clr-lt-main));
+}
+
+.clr-salmon:hover {
+	--opacity: 1;
 }
 
 .clr-green {
