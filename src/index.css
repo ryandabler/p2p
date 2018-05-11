@@ -4,6 +4,10 @@
 	--opacity: 0.85;
 }  
 
+* {
+	box-sizing: border-box;
+}
+
 html, body, #root, .App {
 	height: 100%;
 }
