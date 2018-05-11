@@ -35,7 +35,7 @@ export function NewContractLineItem(props) {
                     </tr>
                 )}
                 <tr>
-                    <td colSpan="3"><button onClick={addNewLine} className="buttonize clr-green">New</button></td>
+                    <td colSpan="3"><button onClick={addNewLine} className="buttonize clr-green linkify">New</button></td>
                 </tr>
             </tbody>
         </table>
