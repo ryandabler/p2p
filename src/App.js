@@ -29,7 +29,7 @@ class App extends Component {
 					<Header />
 					<Route path="/" component={SideBar} />
 					<Switch>
-						<Route exact path={"/"} render={props => <MainContent match={props.match} />} />
+						<Route exact path={"/"} render={() => <div>Main</div>} />
 						<Route exact path={"/vendors"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/vendors/new"} render={props => <MainContent match={props.match} />} />
 						<Route exact path={"/items"} render={props => <MainContent match={props.match} />} />
