@@ -26,6 +26,7 @@ body {
 
 .clr-salmon {
 	background-color: #f4845cd9
+	color: rgb(var(--clr-lt-main));
 }
 
 .clr-green {
