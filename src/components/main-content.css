@@ -1,6 +1,6 @@
 .main-content {
     background-color: rgb(var(--clr-lt-main));
-    border-radius: 5px;
+    border-top-left-radius: 5px;
     padding: 10px;
     display: grid;
     grid-template-columns: 80% 20%;
