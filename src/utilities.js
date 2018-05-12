@@ -8,9 +8,9 @@ export function transformContracts(data) {
         return {
             contract: contract.id,
             vendor: contract.vendor,
-            amount: contract.items.reduce((accum, item) => accum + item.amount),
+            amount: contract.details.reduce((accum, item) => accum + item.price * item.quantity, 0),
             deposit: contract.deposit,
-            closed: contract.items.reduce((accum, item) => accum && item.closed)
+            closed: contract.details.reduce((accum, item) => accum && item.closed, true)
         };
     });
 }
