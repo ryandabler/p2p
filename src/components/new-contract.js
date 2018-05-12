@@ -2,9 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { addNewFormLine, createResource } from "../actions";
-import { extractFormValues, structureFormValues } from "../utilities";
+import { extractFormValues, structureFormValues, loadedComponent } from "../utilities";
+import { newFormFields } from "../config";
 import { addToDB } from "../indexeddb";
 import NewContractLineItem from "./new-contract-line-item";
+import FormGroup from "./form-group";
 
 import "./new-contract.css";
 
@@ -30,18 +32,15 @@ export function NewContract(props) {
         props.dispatch(createResource("contracts", values));
     }
 
+    const formGroups = newFormFields[props.component].header.map(group => 
+        <FormGroup key={group.id} specs={group} />
+    );
+    
     return (
         <div className="new-contract">
             <form onSubmit={submitHandler} className="new-contract-form">
                 <h2>Main Info</h2>
-                <label htmlFor="contractId">Contract Number</label>
-                <input id="contractId" name="id" required />
-                <label htmlFor="vendorName">Vendor</label>
-                <input id="vendorName" name="vendor" required />
-                <label htmlFor="contractDate">Date</label>
-                <input id="contractDate" name="date" required />
-                <label htmlFor="contractDeposit">Deposit</label>
-                <input id="contractDeposit" name="deposit" required />
+                {formGroups}
 
                 <h2>Item Info</h2>
                 <NewContractLineItem form={props.form} />
@@ -55,8 +54,9 @@ export function NewContract(props) {
     )
 }
 
-const mapStateToProps = state => ({
-    form: state.form
+const mapStateToProps = (state, props) => ({
+    form: state.form,
+    component: loadedComponent(props.match.url)
 });
 
 export default connect(mapStateToProps)(NewContract);
