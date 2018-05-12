@@ -15,9 +15,9 @@ export default function NewContractLineItem(props) {
             <tbody>
                 {props.form.map((line, idx) =>
                     <tr key={idx}>
-                        <td><input defaultValue={line.product} required /></td>
-                        <td><input defaultValue={line.quantity} required /></td>
-                        <td><input defaultValue={line.price} required /></td>
+                        <td><input defaultValue={line.product} name={`${idx}-product`} required /></td>
+                        <td><input defaultValue={line.quantity} name={`${idx}-quantity`} required /></td>
+                        <td><input defaultValue={line.price} name={`${idx}-price`} required /></td>
                         <td><span className="x linkify">×</span></td>
                     </tr>
                 )}
