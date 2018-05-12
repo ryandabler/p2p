@@ -32,3 +32,30 @@ export function extractFormValues(elements, initObj = {}) {
     });
     return Object.assign(newValues, initObj);
 }
+
+export const structureFormValues = {
+    contracts(flatObj) {
+        const structuredObj = {};
+        const lineItems = [];
+        Object.keys(flatObj).forEach(key => {
+            const val = flatObj[key];
+
+            if (key.match(/[\d]+-[a-zA-Z]+/)) {
+                const [ idx, prop ] = key.split("-");
+
+                const item = lineItems.find(item => item[0] === idx);
+                item ? item[1][prop] = val
+                    : lineItems.push( [idx, { [prop]: val } ]);
+            } else {
+                structuredObj[key] = val;
+            }
+        });
+
+        const flattenedLineItems = lineItems.sort((a, b) => a[0] - b[0])
+            .map(item => item[1]);
+
+        return lineItems.length > 0
+            ? { ...structuredObj, details: flattenedLineItems }
+            : structuredObj;
+    }
+}
