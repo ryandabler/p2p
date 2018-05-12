@@ -1,9 +1,8 @@
 import React from "react";
-import { connect } from "react-redux";
 
 import "./new-contract-line-item.css";
 
-export function NewContractLineItem(props) {
+export default function NewContractLineItem(props) {
     return (
         <table className="new-contract-line-items">
             <thead>
@@ -26,9 +25,3 @@ export function NewContractLineItem(props) {
         </table>
     );
 }
-
-const mapStateToProps = state => ({
-    form: state.form
-});
-
-export default connect(mapStateToProps)(NewContractLineItem);

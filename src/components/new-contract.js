@@ -39,7 +39,7 @@ export function NewContract(props) {
                 <input id="contractDeposit" name="deposit" required />
 
                 <h2>Item Info</h2>
-                <NewContractLineItem />
+                <NewContractLineItem form={props.form} />
                 <div className="menu-options">
                     <button onClick={submitHandler} className="buttonize">Submit</button>
                     <button className="buttonize">Cancel</button>
@@ -50,4 +50,8 @@ export function NewContract(props) {
     )
 }
 
-export default connect()(NewContract);
+const mapStateToProps = state => ({
+    form: state.form
+});
+
+export default connect(mapStateToProps)(NewContract);
