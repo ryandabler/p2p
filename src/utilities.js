@@ -1,6 +1,5 @@
-export function getLastURLSegment(url) {
-    const segments = url.split("/");
-    return segments[segments.length - 1];
+export function loadedComponent(url) {
+    return url.split("/")[1];
 }
 
 export function transformContracts(data) {

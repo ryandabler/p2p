@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import MiniDash from "./mini-dash";
 import Table from "./table";
 import { kpis, tableColumns } from "../config";
-import { getLastURLSegment, transformRules } from "../utilities";
+import { loadedComponent, transformRules } from "../utilities";
 
 import "./main-content.css";
 
@@ -33,7 +33,7 @@ MainContent.propTypes = {
 };
 
 const mapStateToProps = (state, props) => {
-    const urlMatch = getLastURLSegment(props.match.url);
+    const urlMatch = loadedComponent(props.match.url);
 
     return {
         contentType: urlMatch,
