@@ -10,3 +10,10 @@ export const addNewFormLine = fields => ({
     type: ADD_NEW_FORM_LINE,
     fields
 });
+
+export const CREATE_RESOURCE = "CREATE_RESOURCE";
+export const createResource = (resourceType, data) => ({
+    type: CREATE_RESOURCE,
+    resourceType,
+    data
+});

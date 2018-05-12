@@ -1,5 +1,5 @@
 import {
-    LOAD_DATA, ADD_NEW_FORM_LINE
+    LOAD_DATA, ADD_NEW_FORM_LINE, CREATE_RESOURCE
 } from "./actions";
 
 const initialState = {
@@ -21,6 +21,8 @@ export const reducer = (state = initialState, action) => {
         };
 
         return Object.assign({}, state, { form: [ ...state.form, newLine ] });
+    } else if (action.type === CREATE_RESOURCE) {
+        return Object.assign({}, state, [ ...state[action.resourceType], action.data ]);
     }
     
     return state;
