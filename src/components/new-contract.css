@@ -13,28 +13,6 @@
     border-radius: 5px;
 }
 
-.new-contract .new-contract-form > label,
-.new-contract .new-contract-form > input {
-    display: block;
-    width: 100%;
-}
-
-.new-contract .new-contract-form label {
-    margin-bottom: 3px;
-}
-
-.new-contract .new-contract-form input {
-    padding: 5px;
-}
-
-.new-contract .new-contract-form input, .new-contract .new-contract-form label {
-    font-size: 16px;
-}
-
-.new-contract .new-contract-form input:not(:last-child) {
-    margin-bottom: 10px;
-}
-
 .new-contract .menu-options {
     display: flex;
     margin-top: 10px;

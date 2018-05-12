@@ -53,4 +53,34 @@ body {
 
 .linkify {
 	cursor: pointer;
+}color: rgb(var(--clr-lt-main));
+}
+
+.clr-blue:hover {
+	--opacity: 1;
+}
+
+.buttonize {
+    height: 40px;
+	border-radius: 5px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	border: none;
+}
+
+.linkify {
+	cursor: pointer;
+}
+
+input {
+    padding: 5px;
+}
+
+label {
+    margin-bottom: 3px;
+}
+
+input, label {
+	font-size: 16px;
 }
