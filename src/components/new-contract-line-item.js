@@ -1,21 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addNewFormLine } from "../actions";
-
 import "./new-contract-line-item.css";
 
 export function NewContractLineItem(props) {
-    function addNewLine(e) {
-        e.preventDefault();
-        const fields = {
-            product: "",
-            price: "",
-            quantity: ""
-        };
-        props.dispatch(addNewFormLine(fields));
-    }
-
     return (
         <table className="new-contract-line-items">
             <thead>
@@ -34,15 +22,6 @@ export function NewContractLineItem(props) {
                         <td><span className="x linkify">×</span></td>
                     </tr>
                 )}
-                <tr>
-                    <td colSpan="4">
-                        <div className="menu-options">
-                            <button className="buttonize">Submit</button>
-                            <button className="buttonize">Cancel</button>
-                            <button onClick={addNewLine} className="buttonize clr-green linkify">New</button>
-                        </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
     );

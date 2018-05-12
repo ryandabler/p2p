@@ -34,3 +34,16 @@
 .new-contract .new-contract-form input:not(:last-child) {
     margin-bottom: 10px;
 }
+
+.new-contract .menu-options {
+    display: flex;
+    margin-top: 10px;
+}
+
+.new-contract .menu-options > *:not(:last-child) {
+    margin-right: 5px;
+}
+
+.new-contract .menu-options > :last-child {
+    margin-left: auto;
+}
