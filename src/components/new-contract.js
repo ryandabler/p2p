@@ -30,8 +30,8 @@ export function NewContract(props) {
                 <h2>Item Info</h2>
                 <NewContractLineItem form={props.form} type={props.component} />
                 <div className="menu-options">
-                    <button className="buttonize">Submit</button>
-                    <button className="buttonize">Cancel</button>
+                    <button className="buttonize clr-blue linkify">Submit</button>
+                    <button className="buttonize clr-red linkify">Cancel</button>
                     <button onClick={props.addNewLine} className="buttonize clr-green linkify">New</button>
                 </div>
             </form>
@@ -47,7 +47,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = (dispatch, props) => ({
     addNewLine: e => {
         e.preventDefault();
-        
+
         const fields = generateEmptyObject(newFormFields[loadedComponent(props.match.url)].items);
         dispatch(addNewFormLine(fields));
     },
