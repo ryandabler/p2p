@@ -11,25 +11,10 @@ import FormGroup from "./form-group";
 import "./new-contract.css";
 
 export function NewContract(props) {
-    function addNewLine(e) {
-        e.preventDefault();
-        const fields = {
-            product: "",
-            price: "",
-            quantity: ""
-        };
-        props.dispatch(addNewFormLine(fields));
-    }
-
     function submitHandler(e) {
         e.preventDefault();
 
-        const values = structureFormValues.contracts(
-            extractFormValues(e.target.elements)
-        );
-        
-        addToDB(values, "contracts");
-        props.dispatch(createResource("contracts", values));
+        props.createResource(e);
     }
 
     const formGroups = newFormFields[props.component].header.map(group => 
@@ -47,7 +32,7 @@ export function NewContract(props) {
                 <div className="menu-options">
                     <button className="buttonize">Submit</button>
                     <button className="buttonize">Cancel</button>
-                    <button onClick={addNewLine} className="buttonize clr-green linkify">New</button>
+                    <button onClick={props.addNewLine} className="buttonize clr-green linkify">New</button>
                 </div>
             </form>
         </div>
@@ -59,4 +44,26 @@ const mapStateToProps = (state, props) => ({
     component: loadedComponent(props.match.url)
 });
 
-export default connect(mapStateToProps)(NewContract);
+const mapDispatchToProps = dispatch => ({
+    addNewLine: e => {
+        e.preventDefault();
+
+        const fields = {
+            product: "",
+            price: "",
+            quantity: ""
+        };
+        dispatch(addNewFormLine(fields));
+    },
+
+    createResource: e => {
+        const values = structureFormValues.contracts(
+            extractFormValues(e.target.elements)
+        );
+    
+        addToDB(values, "contracts");
+        dispatch(createResource("contracts", values));
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewContract);
