@@ -11,6 +11,10 @@ import FormGroup from "./form-group";
 import "./new-contract.css";
 
 export function NewContract(props) {
+    function cancel() {
+        props.history.push("./");
+    }
+    
     function submitHandler(e) {
         e.preventDefault();
 
@@ -31,7 +35,7 @@ export function NewContract(props) {
                 <NewContractLineItem form={props.form} type={props.component} />
                 <div className="menu-options">
                     <button className="buttonize clr-blue linkify">Submit</button>
-                    <button className="buttonize clr-red linkify">Cancel</button>
+                    <button onClick={cancel} className="buttonize clr-red linkify">Cancel</button>
                     <button onClick={props.addNewLine} className="buttonize clr-green linkify">New</button>
                 </div>
             </form>
