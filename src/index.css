@@ -42,18 +42,18 @@ body {
 	--opacity: 1;
 }
 
-.buttonize {
-    height: 40px;
-	border-radius: 5px;
-	display: flex;
-    align-items: center;
-    justify-content: center;
-	border: none;
+.clr-red {
+	background-color: rgba(150, 17, 17, var(--opacity));
+	color: rgb(var(--clr-lt-main));
 }
 
-.linkify {
-	cursor: pointer;
-}color: rgb(var(--clr-lt-main));
+.clr-red:hover {
+	--opacity: 1;
+}
+
+.clr-blue {
+	background-color: rgba(17, 89, 150, var(--opacity));
+	color: rgb(var(--clr-lt-main));
 }
 
 .clr-blue:hover {
