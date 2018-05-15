@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { addNewFormLine, createResource } from "../actions";
-import { extractFormValues, structureFormValues, loadedComponent } from "../utilities";
+import { extractFormValues, structureFormValues, loadedComponent, generateEmptyObject } from "../utilities";
 import { newFormFields } from "../config";
 import { addToDB } from "../indexeddb";
 import NewContractLineItem from "./new-contract-line-item";
@@ -44,15 +44,11 @@ const mapStateToProps = (state, props) => ({
     component: loadedComponent(props.match.url)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
     addNewLine: e => {
         e.preventDefault();
-
-        const fields = {
-            product: "",
-            price: "",
-            quantity: ""
-        };
+        
+        const fields = generateEmptyObject(newFormFields[loadedComponent(props.match.url)].items);
         dispatch(addNewFormLine(fields));
     },
 
