@@ -43,7 +43,7 @@ export function NewContract(props) {
                 {formGroups}
 
                 <h2>Item Info</h2>
-                <NewContractLineItem form={props.form} />
+                <NewContractLineItem form={props.form} type={props.component} />
                 <div className="menu-options">
                     <button className="buttonize">Submit</button>
                     <button className="buttonize">Cancel</button>
