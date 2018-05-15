@@ -58,3 +58,10 @@ export const structureFormValues = {
             : structuredObj;
     }
 }
+
+export function generateEmptyObject(objSchema) {
+    return objSchema.reduce((emptyObj, property) => {
+        emptyObj[property.name] = "";
+        return emptyObj;
+    }, {});
+}
