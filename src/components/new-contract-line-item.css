@@ -18,9 +18,7 @@
     height: 25px;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(255, 0, 0);
     border-radius: 50%;
-    background-color: rgba(255, 0, 0, var(--opacity));
     color: rgb(var(--clr-lt-main));
     visibility: hidden;
 }

@@ -19,7 +19,7 @@ export default function NewContractLineItem(props) {
         return (
             <tr key={idx}>
                 {tds}
-                <td><span className="x linkify">×</span></td>
+                <td><span className="x linkify clr-red">×</span></td>
             </tr>
         );
     });
