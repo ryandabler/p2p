@@ -5,8 +5,12 @@ import { newFormFields } from "../config";
 import "./new-contract-line-item.css";
 
 export default function NewContractLineItem(props) {
+    const style = {
+        width: `calc(100% / ${newFormFields[props.type].items.length})`
+    };
+
     const headers = newFormFields[props.type].items.map(item => 
-        <th key={item.header}>{item.header}</th>
+        <th key={item.header} style={style}>{item.header}</th>
     );
 
     const rows = props.form.map((line, idx) => {
