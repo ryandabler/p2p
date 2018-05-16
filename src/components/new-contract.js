@@ -57,22 +57,26 @@ const mapStateToProps = (state, props) => {
     };
 }
 
-const mapDispatchToProps = (dispatch, props) => ({
-    addNewLine: e => {
-        e.preventDefault();
+const mapDispatchToProps = (dispatch, props) => {
+    const component = loadedComponent(props.match.url);
 
-        const fields = generateEmptyObject(newFormFields[loadedComponent(props.match.url)].items);
-        dispatch(addNewFormLine(fields));
-    },
+    return {
+        addNewLine: e => {
+            e.preventDefault();
 
-    createResource: e => {
-        const values = structureFormValues.contracts(
-            extractFormValues(e.target.elements)
-        );
-    
-        addToDB(values, "contracts");
-        dispatch(createResource("contracts", values));
+            const fields = generateEmptyObject(newFormFields[loadedComponent(props.match.url)].items);
+            dispatch(addNewFormLine(fields));
+        },
+
+        createResource: e => {
+            const values = structureFormValues.contracts(
+                extractFormValues(e.target.elements)
+            );
+            
+            addToDB(values, component);
+            dispatch(createResource(component, values));
+        }
     }
-});
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewContract);
