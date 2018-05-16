@@ -1,10 +1,11 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 import { newFormFields } from "../config";
 
 import "./new-resource-line-item.css";
 
-export default function NewContractLineItem(props) {
+export default function NewResourceLineItem(props) {
     const style = {
         width: `calc(100% / ${newFormFields[props.type].items.length})`
     };
