@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { PropTypes } from "prop-types";
 
 import { addNewFormLine, createResource } from "../actions";
 import { extractFormValues, structureFormValues, loadedComponent, generateEmptyObject } from "../utilities";
@@ -10,7 +11,7 @@ import FormGroup from "./form-group";
 
 import "./new-resource.css";
 
-export function NewContract(props) {
+export function NewResource(props) {
     function cancel(e) {
         e.preventDefault();
 
@@ -79,4 +80,4 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewContract);
+export default connect(mapStateToProps, mapDispatchToProps)(NewResource);
