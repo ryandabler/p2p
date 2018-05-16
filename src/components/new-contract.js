@@ -31,8 +31,10 @@ export function NewContract(props) {
                 <h2>Main Info</h2>
                 {formGroups}
 
-                <h2>Item Info</h2>
-                <NewContractLineItem form={props.form} type={props.component} />
+                {props.hasItems ? <h2>Item Info</h2> : null}
+                {props.hasItems
+                    ? <NewContractLineItem form={props.form} type={props.component} />
+                    : null}
                 <div className="menu-options">
                     <button className="buttonize clr-blue linkify">Submit</button>
                     <button onClick={cancel} className="buttonize clr-red linkify">Cancel</button>
@@ -43,10 +45,15 @@ export function NewContract(props) {
     )
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state, props) => {
+    const component = loadedComponent(props.match.url);
+
+    return {
     form: state.form,
-    component: loadedComponent(props.match.url)
-});
+        component,
+        hasItems: newFormFields[component].items ? true : false
+    };
+}
 
 const mapDispatchToProps = (dispatch, props) => ({
     addNewLine: e => {
