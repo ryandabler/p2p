@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 import "./form-group.css";
 
@@ -10,3 +11,7 @@ export default function FormGroup(props) {
         </div>
     );
 }
+
+FormGroup.propTypes = {
+    specs: PropTypes.object
+};

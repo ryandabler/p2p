@@ -42,3 +42,8 @@ export default function NewResourceLineItem(props) {
         </table>
     );
 }
+
+NewResourceLineItem.propTypes = {
+    type: PropTypes.string,
+    form: PropTypes.arrayOf(PropTypes.object)
+};

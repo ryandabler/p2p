@@ -48,6 +48,15 @@ export function NewResource(props) {
     )
 }
 
+NewResource.propTypes = {
+    history: PropTypes.object,
+    createResource: PropTypes.func,
+    component: PropTypes.string,
+    hasItems: PropTypes.bool,
+    form: PropTypes.arrayOf(PropTypes.object),
+    addNewLine: PropTypes.func,
+};
+
 const mapStateToProps = (state, props) => {
     const component = loadedComponent(props.match.url);
 

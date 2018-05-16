@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 import "./table.css";
 
@@ -29,3 +30,8 @@ export default function Table(props) {
         </table>
     )
 }
+
+Table.propTypes = {
+    columns: PropTypes.array,
+    data: PropTypes.array
+};
