@@ -268,3 +268,8 @@ export const newFormFields = {
         ]
     },
 };
+
+export const requiredStores = {
+    contracts: [ "contracts" ],
+    vendors: [ "vendors", "invoices" ]
+};
