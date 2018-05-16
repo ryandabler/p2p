@@ -2,6 +2,16 @@ export function loadedComponent(url) {
     return url.split("/")[1];
 }
 
+function generateAddress(addressObj) {
+    const fields = [ "address", "city", "state", "zip", "country" ];
+    return fields
+        .map(field =>
+            addressObj[field] !== "" ? addressObj[field] : null
+        )
+        .filter(field => field !== null)
+        .join(", ");
+}
+
 export function transformContracts(data) {
     return data.map(contract => {
         return {
@@ -14,11 +24,19 @@ export function transformContracts(data) {
     });
 }
 
+export function transformVendors(vendorData, invoiceData) {
+    return vendorData.map(vendor => ({
+        name: vendor.name,
+        address: generateAddress(vendor),
+        balance: invoiceData.filter(invoice => invoice.vendor === vendor.name).reduce((accum, val) => accum + val, 0)
+    }));
+}
+
 export const transformRules = {
     contracts: transformContracts,
     invoices: (data) => data,
     items: (data) => data,
-    vendors: (data) => data,
+    vendors: (vendorData, invoiceData) => transformVendors(vendorData, invoiceData),
     containers: (data) => data,
     shipments: (data) => data
 };
