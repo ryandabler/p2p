@@ -92,27 +92,27 @@ export const newFormFields = {
             }, {
                 id: "vendorAddress",
                 name: "address",
-                required: true,
+                required: false,
                 label: "Address"
             }, {
                 id: "vendorCity",
                 name: "city",
-                required: true,
+                required: false,
                 label: "City"
             }, {
                 id: "vendorState",
                 name: "state",
-                required: true,
+                required: false,
                 label: "State"
             }, {
                 id: "vendorZIP",
                 name: "zip",
-                required: true,
+                required: false,
                 label: "ZIP"
             }, {
                 id: "vendorCountry",
                 name: "country",
-                required: true,
+                required: false,
                 label: "Country"
             }
         ]
