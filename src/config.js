@@ -26,7 +26,7 @@ export const DB_STORES = [
         options: { keyPath: "name" }
     }, {
         name: "contracts",
-        options: { keyPath: "id" }
+        options: { keyPath: "contractId" }
     }, {
         name: "invoices",
         options: { keyPath: [ "vendor", "invoiceId" ] }
