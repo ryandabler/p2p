@@ -11,10 +11,12 @@ import FormGroup from "./form-group";
 import "./new-contract.css";
 
 export function NewContract(props) {
-    function cancel() {
+    function cancel(e) {
+        e.preventDefault();
+
         props.history.push("./");
     }
-    
+
     function submitHandler(e) {
         e.preventDefault();
 
@@ -49,7 +51,7 @@ const mapStateToProps = (state, props) => {
     const component = loadedComponent(props.match.url);
 
     return {
-    form: state.form,
+        form: state.form,
         component,
         hasItems: newFormFields[component].items ? true : false
     };
