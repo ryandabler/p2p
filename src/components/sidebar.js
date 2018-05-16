@@ -11,7 +11,7 @@ export default function SideBar(props) {
     const links = sideBarLinks.map(linkTxt => {
         const match = loadedComponent(props.location.pathname) === linkTxt ? true : false;
         return (
-            <Link key={linkTxt} to={`/${linkTxt}`} className={match ? "plain-link link-match" : "plain-link"}>
+            <Link key={linkTxt} to={`/${linkTxt}/`} className={match ? "plain-link link-match" : "plain-link"}>
                 {linkTxt}
             </Link>
         );

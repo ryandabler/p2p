@@ -17,7 +17,7 @@ export function MainContent(props) {
         <div className="main-content">
             <MiniDash kpis={_kpis} />
             <Table data={props.transform(props.data)} columns={props.columns} />
-            <Link to={`${props.match.url}/new`} className="plain-link buttonize clr-green">
+            <Link to={`${props.match.url}new`} className="plain-link buttonize clr-green">
                 New
             </Link>
         </div>
