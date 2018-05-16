@@ -8,7 +8,7 @@ import "./App.css";
 import Header from "./components/header";
 import SideBar from "./components/sidebar";
 import MainContent from "./components/main-content";
-import NewContract from "./components/new-contract";
+import NewResource from "./components/new-resource";
 import { getEntireDB } from "./indexeddb";
 import { loadData } from "./actions";
 
@@ -31,17 +31,17 @@ class App extends Component {
 					<Switch>
 						<Route exact path={"/"} render={() => <div>Main</div>} />
 						<Route exact path={"/vendors"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/vendors/new"} render={props => <NewContract {...props} />} />
+						<Route exact path={"/vendors/new"} render={props => <NewResource {...props} />} />
 						<Route exact path={"/items"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/items/new"} render={props => <NewContract {...props} />} />
+						<Route exact path={"/items/new"} render={props => <NewResource {...props} />} />
 						<Route exact path={"/contracts"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/contracts/new"} render={props => <NewContract {...props} />} />
+						<Route exact path={"/contracts/new"} render={props => <NewResource {...props} />} />
 						<Route exact path={"/invoices"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/invoices/new"} render={props => <NewContract {...props} />} />
+						<Route exact path={"/invoices/new"} render={props => <NewResource {...props} />} />
 						<Route exact path={"/containers"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/containers/new"} render={props => <NewContract {...props} />} />
+						<Route exact path={"/containers/new"} render={props => <NewResource {...props} />} />
 						<Route exact path={"/shipments"} render={props => <MainContent match={props.match} />} />
-						<Route exact path={"/shipments/new"} render={props => <NewContract {...props} />} />
+						<Route exact path={"/shipments/new"} render={props => <NewResource {...props} />} />
 					</Switch>
 				</div>
 			</Router>

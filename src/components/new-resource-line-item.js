@@ -2,7 +2,7 @@ import React from "react";
 
 import { newFormFields } from "../config";
 
-import "./new-contract-line-item.css";
+import "./new-resource-line-item.css";
 
 export default function NewContractLineItem(props) {
     const style = {
@@ -29,7 +29,7 @@ export default function NewContractLineItem(props) {
     });
 
     return (
-        <table className="new-contract-line-items">
+        <table className="new-resource-line-items">
             <thead>
                 <tr>
                     {headers}

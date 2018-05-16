@@ -5,10 +5,10 @@ import { addNewFormLine, createResource } from "../actions";
 import { extractFormValues, structureFormValues, loadedComponent, generateEmptyObject } from "../utilities";
 import { newFormFields } from "../config";
 import { addToDB } from "../indexeddb";
-import NewContractLineItem from "./new-contract-line-item";
+import NewResourceLineItem from "./new-resource-line-item";
 import FormGroup from "./form-group";
 
-import "./new-contract.css";
+import "./new-resource.css";
 
 export function NewContract(props) {
     function cancel(e) {
@@ -28,14 +28,14 @@ export function NewContract(props) {
     );
     
     return (
-        <div className="new-contract">
-            <form onSubmit={submitHandler} className="new-contract-form">
+        <div className="new-resource">
+            <form onSubmit={submitHandler} className="new-resource-form">
                 <h2>Main Info</h2>
                 {formGroups}
 
                 {props.hasItems ? <h2>Item Info</h2> : null}
                 {props.hasItems
-                    ? <NewContractLineItem form={props.form} type={props.component} />
+                    ? <NewResourceLineItem form={props.form} type={props.component} />
                     : null}
                 <div className="menu-options">
                     <button className="buttonize clr-blue linkify">Submit</button>
