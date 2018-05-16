@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import MiniDash from "./mini-dash";
 import Table from "./table";
-import { kpis, tableColumns } from "../config";
+import { kpis, tableColumns, requiredStores } from "../config";
 import { loadedComponent, transformRules } from "../utilities";
 
 import "./main-content.css";
@@ -16,7 +16,7 @@ export function MainContent(props) {
     return (
         <div className="main-content">
             <MiniDash kpis={_kpis} />
-            <Table data={props.transform(props.data)} columns={props.columns} />
+            <Table data={props.transform(...props.data)} columns={props.columns} />
             <Link to={`${props.match.url}new`} className="plain-link buttonize clr-green">
                 New
             </Link>
@@ -37,7 +37,7 @@ const mapStateToProps = (state, props) => {
 
     return {
         contentType: urlMatch,
-        data: state[urlMatch],
+        data: requiredStores[urlMatch].map(store => state[store]),
         transform: transformRules[urlMatch],
         columns: tableColumns[urlMatch]
     };
